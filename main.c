@@ -10,6 +10,10 @@
 */
 
 #include <stdio.h>
+#include "voitures.h"
+#include "taxes.h"
+#include "affichage.h"
+#include "calculs.h"
 
 // Attention au choix des véhicules créés -> pertinent avec les cas limites
 
