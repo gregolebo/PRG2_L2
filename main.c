@@ -1,7 +1,7 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : main.c
- Auteur(s)      :
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  :
  Description    :
  Remarque(s)    :
@@ -10,9 +10,8 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void) {
+int main() {
    printf("Hello, World!\n");
-   return EXIT_SUCCESS;
+   return 0;
 }
