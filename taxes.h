@@ -12,4 +12,7 @@
 #ifndef PRG2_L2_TAXES_H
 #define PRG2_L2_TAXES_H
 
+// définir les taxes avec des constantes et non define
+typedef double CHF;
+
 #endif //PRG2_L2_TAXES_H

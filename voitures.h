@@ -12,4 +12,6 @@
 #ifndef PRG2_L2_VOITURES_H
 #define PRG2_L2_VOITURES_H
 
+// tableau de correspondance des chaînes de caractères types de voiture à mettre ici
+
 #endif //PRG2_L2_VOITURES_H
