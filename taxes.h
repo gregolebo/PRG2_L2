@@ -27,4 +27,9 @@ const CHF TAXE_PUISSANCE_HDG = 200;
 const CHF TAXE_POIDS_BASE_HDG = 300;
 const CHF COEFF_TAXE_POIDS_HDG = 20;
 
+// Seuils de taxation
+const uint16_t SEUIL_CYLINDREE = 1400; // [cm3]
+const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
+const uint16_t SEUIL_PUISSANCE = 250; // [CV]
+
 #endif //PRG2_L2_TAXES_H

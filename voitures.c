@@ -12,6 +12,10 @@
 #include "voitures.h"
 #include <assert.h>
 
+// A FAIRE:
+//  - fonction qui renvoie quel type de vehicule {CAMIONETTE, VOITURE_STANDARD, VOITURE_HAUT_DE_GAMME}
+//  - fonction qui calcule le nombre de véhicule sur le parking ?
+
 Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
     assert(volTransport > 0);
     return (Vehicule) {
