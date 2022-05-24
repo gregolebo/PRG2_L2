@@ -10,6 +10,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "voitures.h"
 #include "taxes.h"
 #include "affichage.h"
@@ -19,5 +20,5 @@
 
 int main(void) {
    printf("Hello, World!\n");
-   return 0;
+   return EXIT_SUCCESS;
 }

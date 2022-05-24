@@ -27,37 +27,44 @@ const char* const TYPE_VOITURE_STR[] = {"standard", "haut-de-gamme"};
 typedef struct {
     uint16_t cylindree; // [cm3]
     uint16_t rejetCo2; // [g/km]
-} VoitureStandard;
+} SpecVoitureStandard;
 
 typedef struct {
     uint16_t puissance; // [CV]
-} VoitureHautGamme;
+} SpecVoitureHautGamme;
 
 typedef union {
-    VoitureStandard voitureStandard;
-    VoitureHautGamme voitureHautGamme;
+    SpecVoitureStandard voitureStandard;
+    SpecVoitureHautGamme voitureHautGamme;
 } SpecificitesVoiture;
 
 typedef struct {
     uint16_t poids; // [kg]
+    TypeVoiture typeVoiture;
     SpecificitesVoiture specVoiture;
-} Voiture;
+} SpecVoiture;
 
 typedef struct {
     double volumeTransport; // [m3]
-} Camionnette;
+} SpecCamionnette;
 
 typedef union {
-    Camionnette camionnette;
-    Voiture voiture;
+    SpecCamionnette camionnette;
+    SpecVoiture voiture;
 } CategorieVehicule;
 
 typedef struct {
     Plaque plaque;
     Marque marque;
+    TypeVehicule typeVehicule;
     CategorieVehicule categorieVehicule;
 } Vehicule;
 
 
+// Constructeurs différents véhicules
+
+Vehicule camionnette(Plaque plaque, Marque marque, double volTransport);
+Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree, uint16_t rejetCo2);
+Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t puissance);
 
 #endif //PRG2_L2_VOITURES_H
