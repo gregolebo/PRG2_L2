@@ -1,6 +1,6 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
- Nom du fichier : main.c
+ Nom du fichier : calculs.c
  Auteur(s)      :
  Date creation  :
  Description    :

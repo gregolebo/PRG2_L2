@@ -1,7 +1,7 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : main.c
- Auteur(s)      :
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  :
  Description    :
  Remarque(s)    :
@@ -10,11 +10,10 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 // Attention au choix des véhicules créés -> pertinent avec les cas limites
 
 int main(void) {
    printf("Hello, World!\n");
-   return EXIT_SUCCESS;
+   return 0;
 }
