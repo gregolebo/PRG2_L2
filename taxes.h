@@ -11,6 +11,7 @@
 
 #ifndef PRG2_L2_TAXES_H
 #define PRG2_L2_TAXES_H
+#include <inttypes.h>
 
 // définir les taxes avec des constantes et non define
 typedef double CHF;
