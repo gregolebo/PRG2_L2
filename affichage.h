@@ -12,4 +12,8 @@
 #ifndef PRG2_L2_AFFICHAGE_H
 #define PRG2_L2_AFFICHAGE_H
 
+#include "voitures.h"
+
+void afficherVehicule(const Vehicule* vehicule);
+
 #endif //PRG2_L2_AFFICHAGE_H
