@@ -19,6 +19,9 @@
 // Attention au choix des véhicules créés -> pertinent avec les cas limites
 
 int main(void) {
-   printf("Hello, World!\n");
+   Vehicule test = {.plaque = "test", .marque = "test", .typeVehicule = CAMIONETTE,
+                    .categorieVehicule.voiture.typeVoiture = STANDARD};
+
+   afficherVehicule(&test);
    return EXIT_SUCCESS;
 }

@@ -9,4 +9,18 @@
  ---------------------------------------------------------------------------------------------------------------------
 */
 
+#include <stdio.h>
+#include <assert.h>
 #include "affichage.h"
+#include "voitures.h"
+
+void afficherVehicule(const Vehicule* vehicule) {
+   assert(vehicule != NULL);
+   // type du vehicule
+   // plaque immatriculation et marque
+   // si camionette : volume de transport m3
+   // poids
+   // si voiture standard : cylindrée cm3
+   // si haut de gamme : puissance CV
+   printf("%s", vehicule->typeVehicule);
+}
