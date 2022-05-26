@@ -19,8 +19,8 @@
 // Attention au choix des véhicules créés -> pertinent avec les cas limites
 
 int main(void) {
-   Vehicule test = {.plaque = "test", .marque = "test", .typeVehicule = CAMIONETTE,
-                    .categorieVehicule.voiture.typeVoiture = STANDARD};
+   Vehicule test = {.plaque = "VD-15674", .marque = "Toyota", .typeVehicule = CAMIONETTE,
+                    .categorieVehicule.camionnette.volumeTransport = 10};
 
    afficherVehicule(&test);
    return EXIT_SUCCESS;

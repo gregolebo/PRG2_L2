@@ -22,5 +22,5 @@ void afficherVehicule(const Vehicule* vehicule) {
    // poids
    // si voiture standard : cylindrée cm3
    // si haut de gamme : puissance CV
-   printf("%s", vehicule->typeVehicule);
+   printf("%s", vehicule->marque);
 }

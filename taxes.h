@@ -13,24 +13,43 @@
 #define PRG2_L2_TAXES_H
 #include <inttypes.h>
 
+// Taxes de base
+#define TAXE_BASE_CAMIONNETTE 700
+#define TAXE_BASE_VOITURE 400
+
+// Taxe specifique
+#define COEFF_TAXE_VOL_TRANSP_CAM 10
+#define TAXE_CRITERES1_STAND 50
+#define COEFF_TAXE_CYLINDREE_STAND 0.5
+#define TAXE_PUISSANCE_HDG 200
+#define TAXE_POIDS_BASE_HDG 300
+#define COEFF_TAXE_POIDS_HDG 20
+
+// Seuils de taxation
+#define SEUIL_CYLINDREE 1400
+#define SEUIL_REJET_CO2 130
+#define SEUIL_PUISSANCE 250
+
+/*
 // définir les taxes avec des constantes et non define
 typedef double CHF;
 
 // Taxe de base
-const CHF TAXE_BASE_CAMIONNETTE = 700;
-const CHF TAXE_BASE_VOITURE = 400;
+extern const CHF TAXE_BASE_CAMIONNETTE = 700;
+extern const CHF TAXE_BASE_VOITURE = 400;
 
 // Taxe specifique
-const CHF COEFF_TAXE_VOL_TRANSP_CAM = 10;
-const CHF TAXE_CRITERES1_STAND = 50; // TODO nom plus cohérent à trouver
-const CHF COEFF_TAXE_CYLINDREE_STAND = .05;
-const CHF TAXE_PUISSANCE_HDG = 200;
-const CHF TAXE_POIDS_BASE_HDG = 300;
-const CHF COEFF_TAXE_POIDS_HDG = 20;
+extern const CHF COEFF_TAXE_VOL_TRANSP_CAM = 10;
+extern const CHF TAXE_CRITERES1_STAND = 50; // TODO nom plus cohérent à trouver
+extern const CHF COEFF_TAXE_CYLINDREE_STAND = .05;
+extern const CHF TAXE_PUISSANCE_HDG = 200;
+extern const CHF TAXE_POIDS_BASE_HDG = 300;
+extern const CHF COEFF_TAXE_POIDS_HDG = 20;
 
 // Seuils de taxation
-const uint16_t SEUIL_CYLINDREE = 1400; // [cm3]
-const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
-const uint16_t SEUIL_PUISSANCE = 250; // [CV]
+extern const uint16_t SEUIL_CYLINDREE = 1400; // [cm3]
+extern const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
+extern const uint16_t SEUIL_PUISSANCE = 250; // [CV]
+*/
 
 #endif //PRG2_L2_TAXES_H
