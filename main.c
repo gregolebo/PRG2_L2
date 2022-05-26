@@ -21,7 +21,12 @@
 int main(void) {
    Vehicule test = {.plaque = "VD-15674", .marque = "Toyota", .typeVehicule = CAMIONETTE,
                     .categorieVehicule.camionnette.volumeTransport = 10};
-
+   Vehicule test2 = {.plaque = "VD-17654", .marque = "Toyota", .typeVehicule = VOITURE,
+      .categorieVehicule.voiture.specVoiture.voitureStandard.cylindree = 10};
+   Vehicule test3 = {.plaque = "VD-12223", .marque = "Toyota", .typeVehicule = VOITURE,
+      .categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance = 12};
    afficherVehicule(&test);
+   afficherVehicule(&test2);
+   afficherVehicule(&test3);
    return EXIT_SUCCESS;
 }
