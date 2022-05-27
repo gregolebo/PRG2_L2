@@ -32,7 +32,7 @@ void afficherVehicule(const Vehicule* vehicule) {
    //printf("Marque : %s", vehicule->marque);
    printf(FORMAT_SPECS("%s"), "Marque", vehicule->marque);
    printf(FORMAT_SPECS("%s"), "Plaque", vehicule->plaque);
-   printf(FORMAT_SPECS("%u"), "Type de vehicule", vehicule->typeVehicule);
+   printf(FORMAT_SPECS("%s"), "Type de vehicule", TYPE_VEHICULE_STR[vehicule->typeVehicule]);
 
    switch (vehicule->typeVehicule) {
       case CAMIONETTE:
