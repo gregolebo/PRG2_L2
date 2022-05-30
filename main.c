@@ -48,5 +48,7 @@ int main(void) {
 
    afficherParking(parking, TAILLE_PARKING);
 
+   printf("Type %d", quelType(&test));
+
    return EXIT_SUCCESS;
 }
