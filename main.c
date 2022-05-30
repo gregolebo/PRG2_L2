@@ -28,7 +28,10 @@ int main(void) {
    const size_t TAILLE_PARKING = sizeof(parking) / sizeof(Vehicule);
 
    afficherParking(parking, TAILLE_PARKING);
+
+   afficherStatType(parking, TAILLE_PARKING,  0);
    afficherStatType(parking, TAILLE_PARKING,  1);
+   afficherStatType(parking, TAILLE_PARKING,  2);
 
    return EXIT_SUCCESS;
 }
