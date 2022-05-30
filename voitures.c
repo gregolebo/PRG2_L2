@@ -48,3 +48,18 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t
                                             .specVoiture = { .voitureHautGamme = { .puissance = puissance }}}}};
 
 }
+
+Critere quelType(const Vehicule* v) {
+    assert(v);
+    switch (v->typeVehicule) {
+        case CAMIONETTE:
+            return EST_CAMIONETTE;
+        case VOITURE:
+            switch (v->categorieVehicule.voiture.typeVoiture) {
+                case STANDARD:
+                    return EST_STANDARD;
+                case HAUT_GAMME:
+                    return EST_HAUT_GAMME;
+            }
+    }
+}

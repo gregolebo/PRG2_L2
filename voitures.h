@@ -18,9 +18,11 @@ typedef const char* Plaque;
 
 typedef enum {CAMIONETTE, VOITURE} TypeVehicule;
 typedef enum {STANDARD, HAUT_GAMME} TypeVoiture;
+typedef enum {EST_CAMIONETTE, EST_STANDARD, EST_HAUT_GAMME} Critere;
 
 static const char* const TYPE_VEHICULE_STR[] = {"camionnette", "voiture"};
 static const char* const TYPE_VOITURE_STR[] = {"standard", "haut-de-gamme"};
+static const char* const CRITERE_STR[] = {"camionette", "standard", "haut-de-gamme"};
 
 typedef struct {
     uint16_t cylindree; // [cm3]
@@ -62,5 +64,7 @@ typedef struct {
 Vehicule camionnette(Plaque plaque, Marque marque, double volTransport);
 Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree, uint16_t rejetCo2);
 Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t puissance);
+
+Critere quelType(const Vehicule* v);
 
 #endif //PRG2_L2_VOITURES_H
