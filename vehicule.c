@@ -9,7 +9,8 @@
  ---------------------------------------------------------------------------------------------------------------------
 */
 
-#include "voitures.h"
+#include "vehicule.h"
+#include "calculs.h"
 #include <assert.h>
 
 // A FAIRE:
@@ -49,8 +50,23 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t
 
 }
 
+Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type) {
+   size_t cpt = compterType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau du type choisi
+
+   Vehicule* tabType = (Vehicule*) calloc(cpt, sizeof(Vehicule));
+   size_t index = 0;
+
+   for (size_t i = 0; i < tailleParking; ++i) {
+      if (quelType(&parking[i]) == type) {
+         tabType[index++] = parking[i];
+      }
+   }
+
+   return tabType;
+}
+
 Critere quelType(const Vehicule* v) {
-    assert(v);
+    assert(v != NULL);
     switch (v->typeVehicule) {
         case CAMIONETTE:
             return EST_CAMIONETTE;

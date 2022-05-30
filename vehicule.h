@@ -8,8 +8,8 @@
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
-#ifndef PRG2_L2_VOITURES_H
-#define PRG2_L2_VOITURES_H
+#ifndef PRG2_L2_VEHICULE_H
+#define PRG2_L2_VEHICULE_H
 
 #include <inttypes.h>
 
@@ -67,4 +67,7 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t
 
 Critere quelType(const Vehicule* v);
 
-#endif //PRG2_L2_VOITURES_H
+// Renvoie un tableau remplit uniquement d'un vehicule du type choisit
+Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type);
+
+#endif //PRG2_L2_VEHICULE_H

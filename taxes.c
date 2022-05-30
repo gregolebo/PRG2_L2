@@ -9,6 +9,7 @@
  ---------------------------------------------------------------------------------------------------------------------
 */
 
+#include <stdlib.h>
 #include "taxes.h"
 //#include "voitures.h"
 
@@ -51,6 +52,15 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
          break;
 
    }
-
    return taxe;
+}
+
+double* calculTaxe(const Vehicule* tabTrie, size_t taille) {
+   double* tabTaxe = (double*) calloc(taille, sizeof(double));
+
+   for(size_t i = 0; i < taille; ++i) {
+      tabTaxe[i] = taxeAnnuelle(&tabTrie[i]);
+   }
+
+   return tabTaxe;
 }

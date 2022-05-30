@@ -9,8 +9,9 @@
  ---------------------------------------------------------------------------------------------------------------------
 */
 
-#include "calculs.h"
 #include <math.h>
+#include <assert.h>
+#include "calculs.h"
 
 double somme(const double tab[], size_t n) {
     double somme = 0;
@@ -54,5 +55,17 @@ double ecartType(const double tab[], size_t n) {
     }
     ecartType = sqrt(sommeCarres / (double) (n - 1));
     return ecartType;
+}
+
+size_t compterType(const Vehicule* parking, size_t tailleParking, Critere type) {
+   assert(parking != NULL);
+   size_t cpt = 0;
+
+   for(size_t i = 0; i < tailleParking; ++i) {
+      if(parking->typeVehicule == type)
+         ++cpt;
+   }
+
+   return cpt;
 }
 

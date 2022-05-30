@@ -12,7 +12,9 @@
 #include <stdio.h>
 #include <assert.h>
 #include "affichage.h"
-#include "voitures.h"
+#include "vehicule.h"
+#include "taxes.h"
+#include "calculs.h"
 
 #define str(x) #x
 #define xstr(x) str(x)
@@ -20,7 +22,7 @@
 #define FORMAT_SPECS(param) "%-" xstr(NBR_ESPACES) "s : " param "\n"
 #define PRECISION_AFFICHAGE "%.2f"
 
-void afficherParking(Vehicule* parking, size_t tailleParking) {
+void afficherParking(Vehicule *parking, size_t tailleParking) {
    assert(parking != NULL);
 
    for (size_t i = 0; i < tailleParking; ++i) {
@@ -29,7 +31,11 @@ void afficherParking(Vehicule* parking, size_t tailleParking) {
    }
 }
 
-void afficherVehicule(const Vehicule* vehicule) {
+void afficherTaxe(const Vehicule *vehicule) {
+   printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Taxe annuelle [CHF]", taxeAnnuelle(vehicule));
+}
+
+void afficherVehicule(const Vehicule *vehicule) {
    assert(vehicule != NULL);
    // type du vehicule
    // plaque immatriculation et marque
@@ -45,18 +51,33 @@ void afficherVehicule(const Vehicule* vehicule) {
 
    switch (vehicule->typeVehicule) {
       case CAMIONETTE:
-         printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Volume de transport", vehicule->categorieVehicule.camionnette.volumeTransport);
+         printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Volume de transport",
+                vehicule->categorieVehicule.camionnette.volumeTransport);
          break;
       case VOITURE:
+         printf(FORMAT_SPECS("%" PRIu16), "Poids [Kg]", vehicule->categorieVehicule.voiture.poids);
          switch (vehicule->categorieVehicule.voiture.typeVoiture) {
             case STANDARD:
-               printf(FORMAT_SPECS(PRIu16), "Taille cylindree [cm3]", vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
+               printf(FORMAT_SPECS("%" PRIu16), "Taille cylindree [cm3]",
+                      vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
                break;
             case HAUT_GAMME:
-               printf(FORMAT_SPECS(PRIu16),"Puissance [CV]", vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance);
+               printf(FORMAT_SPECS("%" PRIu16), "Puissance [CV]",
+                      vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance);
                break;
          }
          break;
    }
-   //afficherTaxe(vehicule);
+   afficherTaxe(vehicule);
+}
+
+void afficherStatType(const Vehicule *parking, size_t tailleParking, Critere type) {
+   assert(parking != NULL);
+
+   Vehicule *tabTrie = triTypeVehicule(parking, tailleParking, type);
+
+   size_t cpt = compterType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau de taxes
+   double* tabTaxe = calculTaxe(tabTrie, cpt);
+
+   printf("%f", *tabTaxe);
 }
