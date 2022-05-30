@@ -20,6 +20,15 @@
 #define FORMAT_SPECS(param) "%-" xstr(NBR_ESPACES) "s : " param "\n"
 #define PRECISION_AFFICHAGE "%.2f"
 
+void afficherParking(Vehicule* parking, size_t tailleParking) {
+   assert(parking != NULL);
+
+   for (size_t i = 0; i < tailleParking; ++i) {
+      assert(&parking[i] != NULL);
+      afficherVehicule(&parking[i]);
+   }
+}
+
 void afficherVehicule(const Vehicule* vehicule) {
    assert(vehicule != NULL);
    // type du vehicule
@@ -41,12 +50,13 @@ void afficherVehicule(const Vehicule* vehicule) {
       case VOITURE:
          switch (vehicule->categorieVehicule.voiture.typeVoiture) {
             case STANDARD:
-               printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Taille cylindree [cm3]", vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
+               printf(FORMAT_SPECS(PRIu16), "Taille cylindree [cm3]", vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
                break;
             case HAUT_GAMME:
-               printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Puissance [CV]", vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance);
+               printf(FORMAT_SPECS(PRIu16),"Puissance [CV]", vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance);
                break;
          }
          break;
    }
+   //afficherTaxe(vehicule);
 }

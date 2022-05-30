@@ -14,6 +14,10 @@
 
 #include "voitures.h"
 
+void afficherParking(Vehicule* parking, size_t tailleParking);
+
 void afficherVehicule(const Vehicule* vehicule);
+
+void afficherTaxe(const Vehicule* vehicule);
 
 #endif //PRG2_L2_AFFICHAGE_H
