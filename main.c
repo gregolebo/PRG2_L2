@@ -12,35 +12,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "vehicule.h"
-#include "taxes.h"
 #include "affichage.h"
-#include "calculs.h"
-
-// Attention au choix des véhicules créés -> pertinent avec les cas limites
 
 int main(void) {
-   Vehicule test = {.plaque = "VD-15674", .marque = "Toyota", .typeVehicule = CAMIONETTE,
-                    .categorieVehicule.camionnette.volumeTransport = 10};
-//   Vehicule test2 = {.plaque = "VD-17654", .marque = "Toyota", .typeVehicule = VOITURE,
-//      .categorieVehicule.voiture.specVoiture.voitureStandard.cylindree = 10};
-//   Vehicule test3 = {.plaque = "VD-12223", .marque = "Toyota", .typeVehicule = VOITURE,
-//      .categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance = 12};
-//   afficherVehicule(&test);
-//   afficherVehicule(&test2);
-//   afficherVehicule(&test3);
-
-   double tab1[] = {28, 34, 51, 19, 62, 43, 29, 38, 45, 26, 49, 33};
-   const size_t TAILLE = sizeof(tab1) / sizeof(double);
-   printf("mediane : %f\n", mediane(tab1, TAILLE));
-   printf("somme : %f\n",   somme(tab1, TAILLE));
-   printf("moyenne : %f\n", moyenne(tab1, TAILLE));
-
-   double tab2[] = {5,2,3,4,8};
-   printf("ecart-type : %f\n", ecartType(tab2, 5));
-
-   Vehicule parking[] = {camionnette("troller", "troller", 1000),
-                         voitureHautGamme("trollerHG", "Khaled", 1230, 12),
-                         voitureStandard("Michael", "Mich", 2500, 1402, 120)};
+   Vehicule parking[] = {camionnette("VD16570", "Toyota", 4.6),
+                         voitureStandard("VD43795", "Mazda", 1400, 1200, 100),
+                         voitureStandard("VD42098", "Honda", 1350, 1100, 130),
+                         voitureStandard("VD42694", "Skoda", 1200, 1150, 150),
+                         voitureStandard("VD53683", "Alfa Romeo", 1300, 1400, 115),
+                         voitureStandard("VD19034", "Dacia", 1350, 1420, 135),
+                         voitureHautGamme("VD32640", "Subaru", 1250, 225),
+                         voitureHautGamme("VD42874", "Suzuki", 1000, 250),
+                         voitureHautGamme("VD39812", "Volkswagen", 1325, 260)};
 
    const size_t TAILLE_PARKING = sizeof(parking) / sizeof(Vehicule);
 

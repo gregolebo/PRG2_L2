@@ -11,6 +11,7 @@
 #ifndef PRG2_L2_VEHICULE_H
 #define PRG2_L2_VEHICULE_H
 
+#include <stdlib.h>
 #include <inttypes.h>
 
 typedef const char* Marque;

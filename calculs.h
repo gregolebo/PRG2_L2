@@ -15,7 +15,6 @@
 #include <stdlib.h>
 #include "vehicule.h"
 
-
 double somme(const double tab[], size_t n);
 
 double moyenne(const double tab[], size_t n);
