@@ -51,7 +51,7 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t
 }
 
 Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type) {
-   size_t cpt = compterType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau du type choisi
+   size_t cpt = compteurType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau du type choisi
 
    Vehicule* tabType = (Vehicule*) calloc(cpt, sizeof(Vehicule));
    size_t index = 0;

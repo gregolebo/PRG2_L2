@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "voitures.h"
+#include "vehicule.h"
 #include "taxes.h"
 #include "affichage.h"
 #include "calculs.h"
@@ -38,17 +38,14 @@ int main(void) {
    double tab2[] = {5,2,3,4,8};
    printf("ecart-type : %f\n", ecartType(tab2, 5));
 
-   printf("Taxe annuelle du bateau 1: CHF %.2f", taxeAnnuelle(&test));
-
    Vehicule parking[] = {camionnette("troller", "troller", 1000),
-                         voitureHautGamme("trollerHG", "Khaled", 12, 12),
-                         voitureStandard("Michael", "Mich", 10, 10, 10)};
+                         voitureHautGamme("trollerHG", "Khaled", 1230, 12),
+                         voitureStandard("Michael", "Mich", 2500, 1402, 120)};
 
    const size_t TAILLE_PARKING = sizeof(parking) / sizeof(Vehicule);
 
    afficherParking(parking, TAILLE_PARKING);
-
-   printf("Type %d", quelType(&test));
+   afficherStatType(parking, TAILLE_PARKING,  1);
 
    return EXIT_SUCCESS;
 }

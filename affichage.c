@@ -29,6 +29,7 @@ void afficherParking(Vehicule *parking, size_t tailleParking) {
       assert(&parking[i] != NULL);
       afficherVehicule(&parking[i]);
    }
+   printf("\n");
 }
 
 void afficherTaxe(const Vehicule *vehicule) {
@@ -37,14 +38,9 @@ void afficherTaxe(const Vehicule *vehicule) {
 
 void afficherVehicule(const Vehicule *vehicule) {
    assert(vehicule != NULL);
-   // type du vehicule
-   // plaque immatriculation et marque
-   // si camionette : volume de transport m3
-   // poids
-   // si voiture standard : cylindrée cm3
-   // si haut de gamme : puissance CV
+
    printf("+ ----------------- VEHICULE ----------------- +\n");
-   //printf("Marque : %s", vehicule->marque);
+
    printf(FORMAT_SPECS("%s"), "Marque", vehicule->marque);
    printf(FORMAT_SPECS("%s"), "Plaque", vehicule->plaque);
    printf(FORMAT_SPECS("%s"), "Type de vehicule", TYPE_VEHICULE_STR[vehicule->typeVehicule]);
@@ -76,8 +72,16 @@ void afficherStatType(const Vehicule *parking, size_t tailleParking, Critere typ
 
    Vehicule *tabTrie = triTypeVehicule(parking, tailleParking, type);
 
-   size_t cpt = compterType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau de taxes
+   size_t cpt = compteurType(parking, tailleParking, type); // Le compteur correspond à la taille du tableau de taxes
    double* tabTaxe = calculTaxe(tabTrie, cpt);
+   free(tabTrie);
 
-   printf("%f", *tabTaxe);
+   printf("+ ------------- TAXES / " "%s" "%s", CRITERE_STR[type], " ------------- +\n");
+   printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Somme", somme(tabTaxe, cpt));
+   printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Moyenne", moyenne(tabTaxe, cpt));
+   printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Mediane", mediane(tabTaxe, cpt));
+   printf(FORMAT_SPECS(PRECISION_AFFICHAGE), "Ecart-type", ecartType(tabTaxe, cpt));
+
+   //printf("%f", *tabTaxe);
+   free(tabTaxe);
 }

@@ -14,6 +14,11 @@
 #include "calculs.h"
 
 double somme(const double tab[], size_t n) {
+
+   if(n <= 0) {
+      return 0;
+   }
+
     double somme = 0;
     for(size_t i = 0; i < n; ++i) {
         somme += tab[i];
@@ -22,10 +27,16 @@ double somme(const double tab[], size_t n) {
 }
 
 double moyenne(const double tab[], size_t n) {
+
+   if(n <= 0) {
+      return 0;
+   }
+
     return somme(tab, n) / (double)n;
 }
 
 int compareDouble(const void* x, const void* y) {
+
     if (*(double*) x > *(double*) y) {
         return 1;
     } else if (*(double*) x == *(double*) y) {
@@ -38,6 +49,11 @@ int compareDouble(const void* x, const void* y) {
 // si n est impair, la mediane est la (N + 1) / 2 ème valeur
 // si n est pair, la mediane est la moyenne des (N/2) ème et (N+1/2) ème valeurs
 double mediane(const double tab[], size_t n) {
+
+   if(n <= 0) {
+      return 0;
+   }
+
     double mediane = 0;
     qsort(tab, n, sizeof(double),compareDouble);
     if(n % 2) {
@@ -49,6 +65,11 @@ double mediane(const double tab[], size_t n) {
 }
 
 double ecartType(const double tab[], size_t n) {
+
+   if(n == 1 || n <= 0) {
+      return 0; // Ecart-type nul dans le cas ou il n'y a qu'un seul vehicule ou si le tableau est vide
+   }
+
     double sommeCarres = 0, ecartType = 0;
     for(size_t i = 0; i < n; ++i) {
         sommeCarres += pow(tab[i] - moyenne(tab, n), 2);
@@ -57,12 +78,12 @@ double ecartType(const double tab[], size_t n) {
     return ecartType;
 }
 
-size_t compterType(const Vehicule* parking, size_t tailleParking, Critere type) {
+size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type) {
    assert(parking != NULL);
    size_t cpt = 0;
 
    for(size_t i = 0; i < tailleParking; ++i) {
-      if(parking->typeVehicule == type)
+      if(quelType(&parking[i]) == type)
          ++cpt;
    }
 

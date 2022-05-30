@@ -20,9 +20,9 @@ typedef enum {CAMIONETTE, VOITURE} TypeVehicule;
 typedef enum {STANDARD, HAUT_GAMME} TypeVoiture;
 typedef enum {EST_CAMIONETTE, EST_STANDARD, EST_HAUT_GAMME} Critere;
 
-static const char* const TYPE_VEHICULE_STR[] = {"camionnette", "voiture"};
-static const char* const TYPE_VOITURE_STR[] = {"standard", "haut-de-gamme"};
-static const char* const CRITERE_STR[] = {"camionette", "standard", "haut-de-gamme"};
+static const char* const TYPE_VEHICULE_STR[] = {"Camionnette", "Voiture"};
+static const char* const TYPE_VOITURE_STR[] = {"Standard", "Haut-de-gamme"};
+static const char* const CRITERE_STR[] = {"Camionette", "Standard", "Haut-de-gamme"};
 
 typedef struct {
     uint16_t cylindree; // [cm3]
