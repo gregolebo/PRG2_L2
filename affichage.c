@@ -17,19 +17,27 @@
 
 #define str(x) #x
 #define xstr(x) str(x)
-#define NBR_ESPACES 29
+#define NBR_ESPACES 30
 #define FORMAT_AFFICHAGE(param) "%-" xstr(NBR_ESPACES) "s : " param "\n"
 #define PRECISION_AFFICHAGE "%.2f"
 #define FORMAT_UINT16 "%" PRIu16
 
+
+
 void afficherParking(Vehicule *parking, size_t tailleParking) {
    assert(parking != NULL);
+
+   printf("+ ------------------ PARKING ------------------- +\n");
 
    for (size_t i = 0; i < tailleParking; ++i) {
       assert(&parking[i] != NULL);
       afficherVehicule(&parking[i]);
    }
+
+   printf("+ ---------------------------------------------- +\n");
+
    printf("\n");
+   idVehicule = 0;
 }
 
 void afficherTaxe(const Vehicule *vehicule) {
@@ -40,7 +48,9 @@ void afficherTaxe(const Vehicule *vehicule) {
 void afficherVehicule(const Vehicule *vehicule) {
    assert(vehicule != NULL);
 
-   printf("+ ----------------- VEHICULE ----------------- +\n");
+
+   printf("+ ----------------- VEHICULE " "%d" "%s",
+          ++idVehicule, " ----------------- +\n");
 
    printf(FORMAT_AFFICHAGE("%s"), "Marque", vehicule->marque);
    printf(FORMAT_AFFICHAGE("%s"), "Plaque", vehicule->plaque);
@@ -89,13 +99,15 @@ void afficherStatType(const Vehicule *parking, size_t tailleParking, Critere typ
    free(tabTrie);
    tabTrie = NULL;
 
-   printf("+ ------------- TAXES / " "%s" "%s", CRITERE_STR[type],
-          " ------------- +\n");
+   printf("+ ------------- TAXES / " "%s" "%s",
+          CRITERE_STR[type], " ------------- +\n");
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Somme", somme(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Moyenne", moyenne(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Mediane", mediane(tabTaxe, cpt));
-   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Ecart-type", ecartType(tabTaxe, cpt));
+   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Ecart-type",
+          ecartType(tabTaxe, cpt));
 
    free(tabTaxe);
    tabTaxe = NULL;
+
 }
