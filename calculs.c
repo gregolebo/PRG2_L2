@@ -49,7 +49,6 @@ int compareDouble(const void* x, const void* y) {
     }
 }
 
-
 double mediane(const double tab[], size_t taille) {
    if (taille <= 0) {
       return NAN;

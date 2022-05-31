@@ -25,9 +25,8 @@ Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
       .categorieVehicule = {.camionnette = {.volumeTransport = volTransport}}};
 }
 
-Vehicule
-voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree,
-                uint16_t rejetCo2) {
+Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree,
+                         uint16_t rejetCo2) {
    assert(poids && cylindree);
    return (Vehicule) {
       .plaque = plaque,
@@ -56,9 +55,7 @@ Vehicule voitureHautGamme(Plaque plaque,
 
 }
 
-Vehicule *triTypeVehicule(const Vehicule *parking,
-                          size_t tailleParking,
-                          Critere type) {
+Vehicule *triTypeVehicule(const Vehicule *parking, size_t tailleParking, Critere type) {
 
    // Le compteur correspond à la taille du tableau du type choisi
    size_t cpt = compteurType(parking, tailleParking, type);

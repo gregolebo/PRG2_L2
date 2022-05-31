@@ -25,17 +25,15 @@
 #define PRECISION_AFFICHAGE "%.2f"
 #define FORMAT_UINT16 "%" PRIu16
 
-
-
 void afficherParking(Vehicule* parking, size_t tailleParking) {
    assert(parking != NULL);
 
    printf("+ ----------------- PARKING ------------------ +\n");
 
-   qsort(parking, tailleParking, sizeof(Vehicule), compareDouble);
+   qsort(parking, tailleParking, sizeof(Vehicule), compareTaxes);
 
    for(size_t i = 0; i < tailleParking; ++i) {
-      assert(&parking[i] != NULL); // TODO vérifier si c'est pas mieux de mettre un if au lieu d'un assert ?
+      assert(&parking[i] != NULL);
       afficherVehicule(&parking[i]);
    }
 
@@ -91,7 +89,7 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
 
-   size_t cpt = compteurType()
+   size_t cpt = compteurType(parking, tailleParking, type);
 
    // Le compteur (cpt) correspond à la taille du tableau de taxes (tabTaxe), car s'il y a 3
    // camionnettes dans le parking, il y aura 3 taxes à calculer
@@ -102,7 +100,7 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    printf("+ ------------- TAXES / " "%s" "%s",
           CRITERE_STR[type], " ------------- +\n");
-   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Somme", somme(tabTaxe, cpt));
+   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Somme",   somme(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Moyenne", moyenne(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Mediane", mediane(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Ecart-type",
