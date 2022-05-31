@@ -11,6 +11,7 @@
 
 #ifndef PRG2_L2_TAXES_H
 #define PRG2_L2_TAXES_H
+
 #include <inttypes.h>
 #include "vehicule.h"
 

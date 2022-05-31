@@ -15,6 +15,7 @@
 #include "affichage.h"
 
 int main(void) {
+
    Vehicule parking[] = {camionnette("VD16570", "Toyota", 4.6),
                          voitureStandard("VD43795", "Mazda", 1400, 1200, 100),
                          voitureStandard("VD42098", "Honda", 1350, 1100, 130),
@@ -29,9 +30,9 @@ int main(void) {
 
    afficherParking(parking, TAILLE_PARKING);
 
-   afficherStatType(parking, TAILLE_PARKING,  0);
-   afficherStatType(parking, TAILLE_PARKING,  1);
-   afficherStatType(parking, TAILLE_PARKING,  2);
+   afficherStatType(parking, TAILLE_PARKING, (Critere) CAMIONETTE);
+   afficherStatType(parking, TAILLE_PARKING, (Critere) STANDARD);
+   afficherStatType(parking, TAILLE_PARKING, (Critere) HAUT_GAMME);
 
    return EXIT_SUCCESS;
 }

@@ -9,9 +9,9 @@
  ---------------------------------------------------------------------------------------------------------------------
 */
 
+#include <assert.h>
 #include "vehicule.h"
 #include "calculs.h"
-#include <assert.h>
 
 // A FAIRE:
 //  - fonction qui renvoie quel type de vehicule {CAMIONETTE, VOITURE_STANDARD, VOITURE_HAUT_DE_GAMME}
