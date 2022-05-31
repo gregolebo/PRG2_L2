@@ -93,8 +93,8 @@ size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type)
 }
 
 // Fonction de comparaison utilisée dans le qsort()
-int compareTaxes(const Vehicule * a, const Vehicule * b) {
-   double fa = taxeAnnuelle(a);
-   double fb = taxeAnnuelle(b);
+int compareTaxes(const void * x, const void * y) {
+   double fa = taxeAnnuelle(x);
+   double fb = taxeAnnuelle(y);
    return (fa < fb) - (fa > fb);
 }

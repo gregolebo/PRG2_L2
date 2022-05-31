@@ -29,7 +29,7 @@ void afficherParking(Vehicule *parking, size_t tailleParking) {
 
    printf("+ ----------------- PARKING ------------------ +\n");
 
-   qsort(parking, tailleParking, sizeof(Vehicule),  compareTaxes);
+   qsort(parking, tailleParking, sizeof(Vehicule), compareTaxes);
 
    for (size_t i = 0; i < tailleParking; ++i) {
       assert(&parking[i] != NULL);
