@@ -91,7 +91,7 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
 
-   size_t cpt = compteurType(parking, tailleParking, type);
+   size_t cpt = compteurType()
 
    // Le compteur (cpt) correspond à la taille du tableau de taxes (tabTaxe), car s'il y a 3
    // camionnettes dans le parking, il y aura 3 taxes à calculer

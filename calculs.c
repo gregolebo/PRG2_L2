@@ -38,7 +38,7 @@ double moyenne(const double tab[], size_t n) {
    return somme(tab, n) / (double) n;
 }
 
-// Fonction de comparaison utilisée dans le qsort()
+// Fonction de comparaison utilisée dans le qsort() nécessaire pour le calcul de la médiane
 int compareDouble(const void* x, const void* y) {
     if (*(double*) x > *(double*) y) {
         return 1;
@@ -55,7 +55,7 @@ double mediane(const double tab[], size_t taille) {
       return NAN;
    }
 
-    double mediane = 0;
+    double mediane;
     qsort(tab, taille, sizeof(double), compareDouble);
     if (taille % 2) {
         mediane = tab[taille / 2];

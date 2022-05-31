@@ -70,7 +70,7 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t
 
 Critere quelType(const Vehicule* v);
 
-// Renvoie un tableau remplit uniquement d'un vehicule du type choisit
+// Renvoie un tableau remplit uniquement d'un vehicule du type choisi
 Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type);
 
 #endif //PRG2_L2_VEHICULE_H

@@ -27,6 +27,8 @@ double ecartType(const double tab[], size_t n);
 
 int compareDouble(const void *x, const void *y);
 
+size_t compteurType(const Vehicule *parking, size_t tailleParking, Critere type);
+
 int compareTaxes(const void* x, const void* y);
 
 #endif //PRG2_L2_CALCULS_H
