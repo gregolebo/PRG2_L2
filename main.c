@@ -30,9 +30,9 @@ int main(void) {
 
    afficherParking(parking, TAILLE_PARKING);
 
-   afficherStatType(parking, TAILLE_PARKING, (Critere) CAMIONETTE);
-   afficherStatType(parking, TAILLE_PARKING, (Critere) STANDARD);
-   afficherStatType(parking, TAILLE_PARKING, (Critere) HAUT_GAMME);
+   afficherStatType(parking, TAILLE_PARKING, EST_CAMIONETTE);
+   afficherStatType(parking, TAILLE_PARKING, EST_STANDARD);
+   afficherStatType(parking, TAILLE_PARKING, EST_HAUT_GAMME);
 
    return EXIT_SUCCESS;
 }
