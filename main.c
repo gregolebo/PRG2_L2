@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : main.c
- Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
  Date creation  : 26.05.2022
- Description    :
- Remarque(s)    :
+ Description    : Programme permettant la création d'un parking et affichant l'ensemble des caractéristiques ainsi
+                  que la taxe annuelle due des différents véhicules s'y trouvant
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -17,6 +18,9 @@
 int main(void) {
 
    Vehicule parking[] = {camionnette("VD-16570", "Toyota", 4.6),
+                         camionnette("VD-2566", "Renault", 8.0),
+                         camionnette("VD-189732", "Mercedes", 7.8),
+                         camionnette("VD-27839", "Volkswagen", 11.3),
                          voitureStandard("VD-43795", "Mazda", 1400, 1200, 100),
                          voitureStandard("VD-42098", "Honda", 1350, 1100, 130),
                          voitureStandard("VD-42694", "Skoda", 1200, 1150, 150),

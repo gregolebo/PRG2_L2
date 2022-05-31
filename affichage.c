@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : affichage.c
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Implémentation de la librairie contenant les fonctions permettant l'affichage des différents
+                  modules
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -24,15 +25,15 @@
 
 
 
-void afficherParking(Vehicule *parking, size_t tailleParking) {
+void afficherParking(Vehicule* parking, size_t tailleParking) {
    assert(parking != NULL);
 
    printf("+ ----------------- PARKING ------------------ +\n");
 
    qsort(parking, tailleParking, sizeof(Vehicule), compareTaxes);
 
-   for (size_t i = 0; i < tailleParking; ++i) {
-      assert(&parking[i] != NULL);
+   for(size_t i = 0; i < tailleParking; ++i) {
+      assert(&parking[i] != NULL); // TODO vérifier si c'est pas mieux de mettre un if au lieu d'un assert ?
       afficherVehicule(&parking[i]);
    }
 
@@ -41,13 +42,13 @@ void afficherParking(Vehicule *parking, size_t tailleParking) {
 
 }
 
-void afficherTaxe(const Vehicule *vehicule) {
+void afficherTaxe(const Vehicule* vehicule) {
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Taxe annuelle [CHF]",
           taxeAnnuelle(vehicule));
    printf("\n");
 }
 
-void afficherVehicule(const Vehicule *vehicule) {
+void afficherVehicule(const Vehicule* vehicule) {
    assert(vehicule != NULL);
 
 
@@ -86,16 +87,16 @@ void afficherVehicule(const Vehicule *vehicule) {
    afficherTaxe(vehicule);
 }
 
-void afficherStatType(const Vehicule *parking, size_t tailleParking, Critere type) {
+void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere type) {
    assert(parking != NULL);
 
-   Vehicule *tabTrie = triTypeVehicule(parking, tailleParking, type);
+   Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
 
    size_t cpt = compteurType(parking, tailleParking, type);
 
    // Le compteur correspond à la taille du tableau de taxes, car s'il y a 3
    // camionnettes dans le parking, il y aura 3 taxes à calculer
-   double *tabTaxe = calculTaxe(tabTrie, cpt);
+   double* tabTaxe = calculTaxe(tabTrie, cpt);
 
    free(tabTrie);
    tabTrie = NULL;

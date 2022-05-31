@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
- Nom du fichier : voitures.c
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Nom du fichier : vehicule.c
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Implémentation de la librairie contenant les constructeurs des différents véhicules ainsi que les
+                  définitions des fonctions liées à leur usage
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -13,9 +14,6 @@
 #include "vehicule.h"
 #include "calculs.h"
 
-// A FAIRE:
-//  - fonction qui renvoie quel type de vehicule {CAMIONETTE, VOITURE_STANDARD, VOITURE_HAUT_DE_GAMME}
-//  - fonction qui calcule le nombre de véhicule sur le parking ?
 
 Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
     assert(volTransport > 0);

@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : taxes.c
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Implémentation de la librairie permettant le calcul des taxes annuelles dues par les véhicules
+                  pour stationner dans le parking
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -49,6 +50,7 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
    }
    return taxe;
 }
+
 
 double* calculTaxe(const Vehicule* tabTrie, size_t taille) {
    double* tabTaxe = (double*) calloc(taille, sizeof(double));

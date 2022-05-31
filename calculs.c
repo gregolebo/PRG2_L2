@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : calculs.c
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Implémentation de la librairie contenant les diverses fonctions de calculs pour l'analyse des taxes
+                  de véhicules
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -15,8 +16,7 @@
 #include "taxes.h"
 
 double somme(const double tab[], size_t n) {
-
-   if(n <= 0) {
+   if (n <= 0) {
       return NAN;
    }
 
@@ -28,16 +28,15 @@ double somme(const double tab[], size_t n) {
 }
 
 double moyenne(const double tab[], size_t n) {
-
-   if(n <= 0) {
+   if (n <= 0) {
       return NAN;
    }
 
     return somme(tab, n) / (double)n;
 }
 
+// Fonction de comparaison utilisée dans le qsort()
 int compareDouble(const void* x, const void* y) {
-
     if (*(double*) x > *(double*) y) {
         return 1;
     } else if (*(double*) x == *(double*) y) {
@@ -47,17 +46,15 @@ int compareDouble(const void* x, const void* y) {
     }
 }
 
-// Si taille est impair, la mediane est la (N + 1) / 2 ème valeur
-// Si taille est pair, la mediane est la moyenne des (N/2) ème et (N+1/2) ème valeurs
-double mediane(const double tab[], size_t taille) {
 
-   if(taille <= 0) {
+double mediane(const double tab[], size_t taille) {
+   if (taille <= 0) {
       return NAN;
    }
 
     double mediane = 0;
     qsort(tab, taille, sizeof(double), compareDouble);
-    if(taille % 2) {
+    if (taille % 2) {
         mediane = tab[taille / 2];
     } else {
         mediane = (tab[(taille - 1) / 2] + tab[taille / 2]) / 2;
@@ -66,13 +63,11 @@ double mediane(const double tab[], size_t taille) {
 }
 
 double ecartType(const double tab[], size_t n) {
-
-   if(n == 1 || n <= 0) {
-      return NAN; // Ecart-type nul dans le cas ou il n'y a qu'un seul vehicule ou
-                  // si le tableau est vide
+   if (n == 1 || n <= 0) {
+      return NAN; // Ecart-type nul dans le cas où il n'y a qu'un seul véhicule ou si le tableau est vide
    }
 
-    double sommeCarres = 0, ecartType = 0;
+    double sommeCarres = 0, ecartType;
     for(size_t i = 0; i < n; ++i) {
         sommeCarres += pow(tab[i] - moyenne(tab, n), 2);
     }
@@ -88,12 +83,11 @@ size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type)
       if(quelType(&parking[i]) == type)
          ++cpt;
    }
-
    return cpt;
 }
 
 // Fonction de comparaison utilisée dans le qsort()
-int compareTaxes(const void * x, const void * y) {
+int compareTaxes(const void* x, const void* y) {
    double fa = taxeAnnuelle(x);
    double fb = taxeAnnuelle(y);
    return (fa < fb) - (fa > fb);

@@ -1,10 +1,10 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
- Nom du fichier : voitures.h
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Nom du fichier : vehicule.h
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Fichier d'en-tête contenant la structure des différents véhicules permettant la gestion d'un parking
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */

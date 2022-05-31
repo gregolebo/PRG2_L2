@@ -1,10 +1,11 @@
 /*
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : calculs.h
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Date creation  : 31.05.2022
+ Description    : Fichier d'en-tête contenant toutes les définitions des fonctions de calculs nécessaires pour
+                  l'analyse des taxes de véhicules
+ Remarque(s)    : - 
  Compilateur    : Mingw-w64 gcc 8.1.0
  ---------------------------------------------------------------------------------------------------------------------
 */
@@ -27,6 +28,6 @@ int compareDouble(const void* x, const void* y);
 
 size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type);
 
-int compareTaxes(const void * x, const void * y);
+int compareTaxes(const void* x, const void* y);
 
 #endif //PRG2_L2_CALCULS_H
