@@ -13,6 +13,8 @@
 #include <assert.h>
 #include "calculs.h"
 
+#include "taxes.h"
+
 double somme(const double tab[], size_t n) {
 
    if(n <= 0) {
@@ -90,3 +92,9 @@ size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type)
    return cpt;
 }
 
+// Fonction de comparaison utilisée dans le qsort()
+int compareTaxes(const Vehicule * a, const Vehicule * b) {
+   double fa = taxeAnnuelle(a);
+   double fb = taxeAnnuelle(b);
+   return (fa < fb) - (fa > fb);
+}

@@ -29,20 +29,23 @@ void afficherParking(Vehicule *parking, size_t tailleParking) {
 
    printf("+ ------------------ PARKING ------------------- +\n");
 
+   qsort(parking, tailleParking, sizeof(Vehicule),  compareTaxes);
+
    for (size_t i = 0; i < tailleParking; ++i) {
       assert(&parking[i] != NULL);
       afficherVehicule(&parking[i]);
    }
 
    printf("+ ---------------------------------------------- +\n");
-
    printf("\n");
+
    idVehicule = 0;
 }
 
 void afficherTaxe(const Vehicule *vehicule) {
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Taxe annuelle [CHF]",
           taxeAnnuelle(vehicule));
+   printf("\n");
 }
 
 void afficherVehicule(const Vehicule *vehicule) {

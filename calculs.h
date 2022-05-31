@@ -27,6 +27,6 @@ int compareDouble(const void* x, const void* y);
 
 size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type);
 
+int compareTaxes(const Vehicule * a, const Vehicule * b);
+
 #endif //PRG2_L2_CALCULS_H
-
-
