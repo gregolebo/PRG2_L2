@@ -32,7 +32,7 @@ void afficherParking(Vehicule* parking, size_t tailleParking) {
 
    qsort(parking, tailleParking, sizeof(Vehicule), compareTaxes);
 
-   for(size_t i = 0; i < tailleParking; ++i) {
+   for (size_t i = 0; i < tailleParking; ++i) {
       assert(&parking[i] != NULL);
       afficherVehicule(&parking[i]);
    }

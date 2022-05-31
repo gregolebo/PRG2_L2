@@ -25,9 +25,9 @@ double mediane(const double tab[], size_t taille);
 
 double ecartType(const double tab[], size_t n);
 
-int compareDouble(const void *x, const void *y);
+int compareDouble(const void* x, const void* y);
 
-size_t compteurType(const Vehicule *parking, size_t tailleParking, Critere type);
+size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type);
 
 int compareTaxes(const void* x, const void* y);
 
