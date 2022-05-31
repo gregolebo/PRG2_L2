@@ -64,7 +64,7 @@ void afficherVehicule(const Vehicule* vehicule) {
       case VOITURE:
          printf(FORMAT_AFFICHAGE("%s"), "Voiture de type",
                 TYPE_VOITURE_STR[vehicule->categorieVehicule.voiture.typeVoiture]);
-         printf(FORMAT_AFFICHAGE(FORMAT_UINT16), "Poids [Kg]",
+         printf(FORMAT_AFFICHAGE(FORMAT_UINT16), "Poids [kg]",
                 vehicule->categorieVehicule.voiture.poids);
          switch (vehicule->categorieVehicule.voiture.typeVoiture) {
             case STANDARD:
