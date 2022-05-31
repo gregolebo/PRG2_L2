@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "taxes.h"
 
-CHF taxeAnnuelle(const Vehicule *vehicule) {
+CHF taxeAnnuelle(const Vehicule* vehicule) {
    CHF taxe = 0.f;
 
    switch (vehicule->typeVehicule) {

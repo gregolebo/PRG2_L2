@@ -28,8 +28,7 @@ Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
       .categorieVehicule = {.camionnette = {.volumeTransport = volTransport}}};
 }
 
-Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree,
-                         uint16_t rejetCo2) {
+Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree, uint16_t rejetCo2) {
    assert(plaque != NULL);
    assert(marque != NULL);
    assert(poids > 0);
