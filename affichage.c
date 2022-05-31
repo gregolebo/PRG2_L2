@@ -27,7 +27,7 @@
 void afficherParking(Vehicule *parking, size_t tailleParking) {
    assert(parking != NULL);
 
-   printf("+ ------------------ PARKING ------------------- +\n");
+   printf("+ ----------------- PARKING ------------------ +\n");
 
    qsort(parking, tailleParking, sizeof(Vehicule),  compareTaxes);
 
@@ -39,7 +39,6 @@ void afficherParking(Vehicule *parking, size_t tailleParking) {
    printf("+ ---------------------------------------------- +\n");
    printf("\n");
 
-   idVehicule = 0;
 }
 
 void afficherTaxe(const Vehicule *vehicule) {
@@ -52,8 +51,7 @@ void afficherVehicule(const Vehicule *vehicule) {
    assert(vehicule != NULL);
 
 
-   printf("+ ----------------- VEHICULE " "%d" "%s",
-          ++idVehicule, " ----------------- +\n");
+   printf("+ ----------------- VEHICULE ----------------- +\n");
 
    printf(FORMAT_AFFICHAGE("%s"), "Marque", vehicule->marque);
    printf(FORMAT_AFFICHAGE("%s"), "Plaque", vehicule->plaque);
@@ -62,7 +60,7 @@ void afficherVehicule(const Vehicule *vehicule) {
 
    switch (vehicule->typeVehicule) {
       case CAMIONETTE:
-         printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Volume de transport",
+         printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Volume de transport [m3]",
                 vehicule->categorieVehicule.camionnette.volumeTransport);
          break;
       case VOITURE:

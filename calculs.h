@@ -19,7 +19,7 @@ double somme(const double tab[], size_t n);
 
 double moyenne(const double tab[], size_t n);
 
-double mediane(const double tab[], size_t n);
+double mediane(const double tab[], size_t taille);
 
 double ecartType(const double tab[], size_t n);
 

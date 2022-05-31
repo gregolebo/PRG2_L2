@@ -25,8 +25,6 @@ static const char* const TYPE_VEHICULE_STR[] = {"Camionnette", "Voiture"};
 static const char* const TYPE_VOITURE_STR[] = {"Standard", "Haut-de-gamme"};
 static const char* const CRITERE_STR[] = {"Camionette", "Standard", "Haut-de-gamme"};
 
-static unsigned idVehicule = 0;
-
 typedef struct {
     uint16_t cylindree; // [cm3]
     uint16_t rejetCo2; // [g/km]

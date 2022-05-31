@@ -12,13 +12,12 @@
 #include <math.h>
 #include <assert.h>
 #include "calculs.h"
-
 #include "taxes.h"
 
 double somme(const double tab[], size_t n) {
 
    if(n <= 0) {
-      return 0;
+      return NAN;
    }
 
     double somme = 0;
@@ -31,7 +30,7 @@ double somme(const double tab[], size_t n) {
 double moyenne(const double tab[], size_t n) {
 
    if(n <= 0) {
-      return 0;
+      return NAN;
    }
 
     return somme(tab, n) / (double)n;
@@ -48,20 +47,20 @@ int compareDouble(const void* x, const void* y) {
     }
 }
 
-// si n est impair, la mediane est la (N + 1) / 2 ème valeur
-// si n est pair, la mediane est la moyenne des (N/2) ème et (N+1/2) ème valeurs
-double mediane(const double tab[], size_t n) {
+// Si taille est impair, la mediane est la (N + 1) / 2 ème valeur
+// Si taille est pair, la mediane est la moyenne des (N/2) ème et (N+1/2) ème valeurs
+double mediane(const double tab[], size_t taille) {
 
-   if(n <= 0) {
-      return 0;
+   if(taille <= 0) {
+      return NAN;
    }
 
     double mediane = 0;
-    qsort(tab, n, sizeof(double),compareDouble);
-    if(n % 2) {
-        mediane = tab[n / 2];
+    qsort(tab, taille, sizeof(double), compareDouble);
+    if(taille % 2) {
+        mediane = tab[taille / 2];
     } else {
-        mediane = (tab[(n - 1) / 2] + tab[n / 2]) / 2;
+        mediane = (tab[(taille - 1) / 2] + tab[taille / 2]) / 2;
     }
     return mediane;
 }
@@ -69,7 +68,8 @@ double mediane(const double tab[], size_t n) {
 double ecartType(const double tab[], size_t n) {
 
    if(n == 1 || n <= 0) {
-      return 0; // Ecart-type nul dans le cas ou il n'y a qu'un seul vehicule ou si le tableau est vide
+      return NAN; // Ecart-type nul dans le cas ou il n'y a qu'un seul vehicule ou
+                  // si le tableau est vide
    }
 
     double sommeCarres = 0, ecartType = 0;

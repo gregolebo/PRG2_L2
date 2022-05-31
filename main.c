@@ -2,7 +2,7 @@
  ---------------------------------------------------------------------------------------------------------------------
  Nom du fichier : main.c
  Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
- Date creation  :
+ Date creation  : 26.05.2022
  Description    :
  Remarque(s)    :
  Compilateur    : Mingw-w64 gcc 8.1.0
