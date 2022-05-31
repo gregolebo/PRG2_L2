@@ -17,7 +17,10 @@
 
 
 Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
+   assert(plaque != NULL);
+   assert(marque != NULL);
    assert(volTransport > 0);
+
    return (Vehicule) {
       .plaque = plaque,
       .marque = marque,
@@ -27,7 +30,12 @@ Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
 
 Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree,
                          uint16_t rejetCo2) {
-   assert(poids && cylindree);
+   assert(plaque != NULL);
+   assert(marque != NULL);
+   assert(poids > 0);
+   assert(cylindree > 0);
+   assert(rejetCo2 > 0);
+
    return (Vehicule) {
       .plaque = plaque,
       .marque = marque,
@@ -38,12 +46,11 @@ Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t 
 
 }
 
-Vehicule voitureHautGamme(Plaque plaque,
-                          Marque marque,
-                          uint16_t poids,
-                          uint16_t puissance) {
-
-   assert(poids && puissance);
+Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t puissance) {
+   assert(plaque != NULL);
+   assert(marque != NULL);
+   assert(poids > 0);
+   assert(puissance > 0);
 
    return (Vehicule) {
       .plaque = plaque,
@@ -55,12 +62,12 @@ Vehicule voitureHautGamme(Plaque plaque,
 
 }
 
-Vehicule *triTypeVehicule(const Vehicule *parking, size_t tailleParking, Critere type) {
+Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type) {
 
    // Le compteur correspond à la taille du tableau du type choisi
    size_t cpt = compteurType(parking, tailleParking, type);
 
-   Vehicule *tabType = (Vehicule *) calloc(cpt, sizeof(Vehicule));
+   Vehicule* tabType = (Vehicule*) calloc(cpt, sizeof(Vehicule));
    size_t index = 0;
 
    for (size_t i = 0; i < tailleParking; ++i) {
@@ -72,7 +79,7 @@ Vehicule *triTypeVehicule(const Vehicule *parking, size_t tailleParking, Critere
    return tabType;
 }
 
-Critere quelType(const Vehicule *v) {
+Critere quelType(const Vehicule* v) {
    assert(v != NULL);
    switch (v->typeVehicule) {
       case CAMIONETTE:
