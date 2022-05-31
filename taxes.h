@@ -1,8 +1,8 @@
 /*
  -----------------------------------------------------------------------------------
  Nom du fichier : taxes.h
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
- Date creation  : 31.05.2022
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
  Description    : Fichier d'en-tête contenant toutes les fonctions permettant le calcul des taxes annuelles dues par
                   les véhicules pour stationner dans le parking
  Remarque(s)    : -

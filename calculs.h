@@ -1,10 +1,10 @@
 /*
   -----------------------------------------------------------------------------------
  Nom du fichier : calculs.h
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
- Date creation  : 31.05.2022
- Description    : Fichier d'en-tête contenant toutes les définitions des fonctions de calculs nécessaires pour
-                  l'analyse des taxes de véhicules
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Fichier d'en-tête contenant toutes les définitions des fonctions
+                  de calculs nécessaires pour l'analyse des taxes de véhicules
  Remarque(s)    : - 
  Compilateur    : Mingw-w64 gcc 8.1.0
  -----------------------------------------------------------------------------------
@@ -26,8 +26,6 @@ double mediane(const double tab[], size_t taille);
 double ecartType(const double tab[], size_t n);
 
 int compareDouble(const void *x, const void *y);
-
-int compareTaxes(const void *x, const void *y);
 
 int compareTaxes(const void* x, const void* y);
 

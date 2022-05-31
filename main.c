@@ -1,7 +1,7 @@
 /*
   -----------------------------------------------------------------------------------
  Nom du fichier : main.c
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  : 26.05.2022
  Description    : Programme permettant la création d'un parking contenant un certain
                   nombre de véhicules ayant des caractéristiques différentes qui

@@ -1,10 +1,10 @@
 /*
  -----------------------------------------------------------------------------------
  Nom du fichier : affichage.h
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
- Date creation  : 31.05.2022
- Description    : Fichier d'en-tête contenant les définitions des fonctions permettant l'affichage des différents
-                  modules
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Fichier d'en-tête contenant les définitions des fonctions
+                  permettant l'affichage des différents modules
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  -----------------------------------------------------------------------------------

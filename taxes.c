@@ -4,7 +4,7 @@
  Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  : 26.05.2022
  Description    : Implémentation de la librairie taxes.h permettant de calculer les
-                  taxes annuelles d'un seul ou de plusieurs véhicules.
+                  taxes annuelles dues par les véhicules pour stationner dans le parking
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  -----------------------------------------------------------------------------------
