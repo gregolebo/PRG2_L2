@@ -15,6 +15,7 @@
 
 #include <math.h>
 #include <assert.h>
+#include <string.h>
 #include "calculs.h"
 #include "taxes.h"
 
@@ -54,8 +55,12 @@ double mediane(const double tab[], size_t taille) {
       return NAN;
    }
 
+   double* ptr = (double*) calloc(taille, sizeof(double));
+   memcpy(ptr, tab, taille);
+
+
     double mediane;
-    qsort(tab, taille, sizeof(double), compareDouble);
+    qsort(ptr, taille, sizeof(double), compareDouble);
     if (taille % 2) {
         mediane = tab[taille / 2];
     } else {
