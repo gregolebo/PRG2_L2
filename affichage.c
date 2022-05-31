@@ -26,7 +26,7 @@
 #define FORMAT_UINT16 "%" PRIu16
 
 void afficherParking(Vehicule* parking, size_t tailleParking) {
-   assert(parking != NULL);
+   if (!parking) return;
 
    printf("+ ----------------- PARKING ------------------ +\n");
 
@@ -48,7 +48,7 @@ void afficherTaxe(const Vehicule* vehicule) {
 }
 
 void afficherVehicule(const Vehicule* vehicule) {
-   assert(vehicule != NULL);
+   if (!vehicule) return;
 
    printf("+ ----------------- VEHICULE ----------------- +\n");
    printf(FORMAT_AFFICHAGE("%s"), "Marque", vehicule->marque);
@@ -85,7 +85,7 @@ void afficherVehicule(const Vehicule* vehicule) {
 }
 
 void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere type) {
-   assert(parking != NULL);
+  if (!parking) return;
 
    Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
 

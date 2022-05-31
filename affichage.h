@@ -15,12 +15,12 @@
 
 #include "vehicule.h"
 
-void afficherParking(Vehicule *parking, size_t tailleParking);
+void afficherParking(Vehicule* parking, size_t tailleParking);
 
-void afficherVehicule(const Vehicule *vehicule);
+void afficherVehicule(const Vehicule* vehicule);
 
-void afficherTaxe(const Vehicule *vehicule);
+void afficherTaxe(const Vehicule* vehicule);
 
-void afficherStatType(const Vehicule *parking, size_t tailleParking, Critere type);
+void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere type);
 
 #endif //PRG2_L2_AFFICHAGE_H
