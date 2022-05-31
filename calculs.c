@@ -1,13 +1,16 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
  Nom du fichier : calculs.c
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
- Date creation  : 31.05.2022
- Description    : Implémentation de la librairie contenant les diverses fonctions de calculs pour l'analyse des taxes
-                  de véhicules
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Implémentation de la librairie calculs.h mettant à disposition
+                  des fonctions qui permettent de :
+                  - calculer la somme, la moyenne, la mediane et l'écart-type
+                  - comparer les taxes de deux vehicules
+                  - comparer des valeurs de type double
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
 
 #include <math.h>
@@ -20,11 +23,11 @@ double somme(const double tab[], size_t n) {
       return NAN;
    }
 
-    double somme = 0;
-    for(size_t i = 0; i < n; ++i) {
-        somme += tab[i];
-    }
-    return somme;
+   double somme = 0;
+   for (size_t i = 0; i < n; ++i) {
+      somme += tab[i];
+   }
+   return somme;
 }
 
 double moyenne(const double tab[], size_t n) {
@@ -32,7 +35,7 @@ double moyenne(const double tab[], size_t n) {
       return NAN;
    }
 
-    return somme(tab, n) / (double)n;
+   return somme(tab, n) / (double) n;
 }
 
 // Fonction de comparaison utilisée dans le qsort()
@@ -75,12 +78,12 @@ double ecartType(const double tab[], size_t n) {
     return ecartType;
 }
 
-size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type) {
+size_t compteurType(const Vehicule *parking, size_t tailleParking, Critere type) {
    assert(parking != NULL);
    size_t cpt = 0;
 
-   for(size_t i = 0; i < tailleParking; ++i) {
-      if(quelType(&parking[i]) == type)
+   for (size_t i = 0; i < tailleParking; ++i) {
+      if (quelType(&parking[i]) == type)
          ++cpt;
    }
    return cpt;

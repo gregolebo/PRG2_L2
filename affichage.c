@@ -1,13 +1,15 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
  Nom du fichier : affichage.c
- Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
- Date creation  : 31.05.2022
- Description    : Implémentation de la librairie contenant les fonctions permettant l'affichage des différents
-                  modules
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Implémentation de la librairie affichage.h permettant d'afficher:
+                     - un parking en affichant son contenu (véhicules)
+                     - un véhicule en affichant ses caractéristiques
+                     - la taxe annuelle d'un véhicule choisi
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
 
 #include <stdio.h>
@@ -30,7 +32,7 @@ void afficherParking(Vehicule* parking, size_t tailleParking) {
 
    printf("+ ----------------- PARKING ------------------ +\n");
 
-   qsort(parking, tailleParking, sizeof(Vehicule), compareTaxes);
+   qsort(parking, tailleParking, sizeof(Vehicule), compareDouble);
 
    for(size_t i = 0; i < tailleParking; ++i) {
       assert(&parking[i] != NULL); // TODO vérifier si c'est pas mieux de mettre un if au lieu d'un assert ?
@@ -39,7 +41,6 @@ void afficherParking(Vehicule* parking, size_t tailleParking) {
 
    printf("+ ---------------------------------------------- +\n");
    printf("\n");
-
 }
 
 void afficherTaxe(const Vehicule* vehicule) {
@@ -51,9 +52,7 @@ void afficherTaxe(const Vehicule* vehicule) {
 void afficherVehicule(const Vehicule* vehicule) {
    assert(vehicule != NULL);
 
-
    printf("+ ----------------- VEHICULE ----------------- +\n");
-
    printf(FORMAT_AFFICHAGE("%s"), "Marque", vehicule->marque);
    printf(FORMAT_AFFICHAGE("%s"), "Plaque", vehicule->plaque);
    printf(FORMAT_AFFICHAGE("%s"), "Type de vehicule",
@@ -94,7 +93,7 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    size_t cpt = compteurType(parking, tailleParking, type);
 
-   // Le compteur correspond à la taille du tableau de taxes, car s'il y a 3
+   // Le compteur (cpt) correspond à la taille du tableau de taxes (tabTaxe), car s'il y a 3
    // camionnettes dans le parking, il y aura 3 taxes à calculer
    double* tabTaxe = calculTaxe(tabTrie, cpt);
 
@@ -111,5 +110,4 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    free(tabTaxe);
    tabTaxe = NULL;
-
 }

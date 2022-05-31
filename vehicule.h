@@ -6,8 +6,9 @@
  Description    : Fichier d'en-tête contenant la structure des différents véhicules permettant la gestion d'un parking
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
+
 #ifndef PRG2_L2_VEHICULE_H
 #define PRG2_L2_VEHICULE_H
 

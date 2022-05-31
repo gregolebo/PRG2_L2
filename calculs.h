@@ -1,5 +1,5 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------
  Nom du fichier : calculs.h
  Auteur(s)      : Céline Roger, Grégoire Guyot et Pablo Urizar
  Date creation  : 31.05.2022
@@ -7,8 +7,9 @@
                   l'analyse des taxes de véhicules
  Remarque(s)    : - 
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
+
 #ifndef PRG2_L2_CALCULS_H
 #define PRG2_L2_CALCULS_H
 
@@ -24,9 +25,9 @@ double mediane(const double tab[], size_t taille);
 
 double ecartType(const double tab[], size_t n);
 
-int compareDouble(const void* x, const void* y);
+int compareDouble(const void *x, const void *y);
 
-size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type);
+int compareTaxes(const void *x, const void *y);
 
 int compareTaxes(const void* x, const void* y);
 
