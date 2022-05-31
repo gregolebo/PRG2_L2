@@ -1,12 +1,12 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
  Nom du fichier : taxes.h
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Déclaration des fonctions de la librairie taxes
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
 
 #ifndef PRG2_L2_TAXES_H
@@ -36,7 +36,8 @@ static const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
 static const uint16_t SEUIL_PUISSANCE = 250; // [CV]
 
 // Fonctions de calcul de taxes
-CHF taxeAnnuelle(const Vehicule* vehicule);
-double* calculTaxe(const Vehicule* tabTrie, size_t taille);
+CHF taxeAnnuelle(const Vehicule *vehicule);
+
+double *calculTaxe(const Vehicule *tabTrie, size_t taille);
 
 #endif //PRG2_L2_TAXES_H

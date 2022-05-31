@@ -1,13 +1,14 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
- Nom du fichier : voitures.h
- Auteur(s)      :
- Date creation  :
- Description    :
- Remarque(s)    :
+ -----------------------------------------------------------------------------------
+ Nom du fichier : vehicule.h
+ Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
+ Date creation  : 26.05.2022
+ Description    : Déclaration des fonctions de la librairie vehicule
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
+
 #ifndef PRG2_L2_VEHICULE_H
 #define PRG2_L2_VEHICULE_H
 

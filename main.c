@@ -1,12 +1,15 @@
 /*
- ---------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------
  Nom du fichier : main.c
  Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  : 26.05.2022
- Description    :
- Remarque(s)    :
+ Description    : Programme permettant la création d'un parking contenant un certain
+                  nombre de véhicules ayant des caractéristiques différentes qui
+                  seront affichés par ordre décroissant en fonction de leur taxe
+                  annuelle.
+ Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
- ---------------------------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------
 */
 
 #include <stdio.h>
