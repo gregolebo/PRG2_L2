@@ -3,8 +3,9 @@
  Nom du fichier : taxes.h
  Auteur(s)      : Grégoire Guyot, Céline Roger, Pablo Urizar
  Date creation  : 26.05.2022
- Description    : Fichier d'en-tête contenant toutes les fonctions permettant le calcul des taxes annuelles dues par
-                  les véhicules pour stationner dans le parking
+ Description    : Fichier d'en-tête contenant toutes les fonctions permettant le
+                  calcul des taxes annuelles dues par les véhicules pour
+                  stationner dans le parking
  Remarque(s)    : -
  Compilateur    : Mingw-w64 gcc 8.1.0
  -----------------------------------------------------------------------------------
@@ -24,11 +25,14 @@ static const CHF TAXE_BASE_VOITURE = 400;
 
 // Taxes spécifiques
 static const CHF COEFF_TAXE_VOL_TRANSP_CAM = 10;
-static const CHF TAXE_CRITERES1_STAND = 50;
+// Cylindrée < 1400 [cm3] et rejet CO2 < 130 [g/km]
+static const CHF TAXE_CRITERES1_STAND = 0;
+// Cylindrée < 1400 [cm3] et rejet CO2 >= 130 [g/km]
+static const CHF TAXE_CRITERES2_STAND = 50;
 static const CHF COEFF_TAXE_CYLINDREE_STAND = .05;
 static const CHF TAXE_PUISSANCE_HDG = 200;
 static const CHF TAXE_POIDS_BASE_HDG = 300;
-static const CHF COEFF_TAXE_POIDS_HDG = 20;
+static const CHF COEFF_TAXE_POIDS_HDG = 0.02;
 
 // Seuils de taxation
 static const uint16_t SEUIL_CYLINDREE = 1400; // [cm3]
@@ -36,8 +40,8 @@ static const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
 static const uint16_t SEUIL_PUISSANCE = 250; // [CV]
 
 // Fonctions de calcul de taxes
-CHF taxeAnnuelle(const Vehicule* vehicule);
+CHF taxeAnnuelle(const Vehicule *vehicule);
 
-double* calculTaxe(const Vehicule* tabTrie, size_t taille);
+double *calculTaxe(const Vehicule *tabTrie, size_t taille);
 
 #endif //PRG2_L2_TAXES_H

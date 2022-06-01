@@ -34,7 +34,10 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
                if (
                   vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.rejetCo2 >=
                   SEUIL_REJET_CO2)
+                  taxe += TAXE_CRITERES2_STAND;
+               else {
                   taxe += TAXE_CRITERES1_STAND;
+               }
 
             } else
                taxe += (COEFF_TAXE_CYLINDREE_STAND *

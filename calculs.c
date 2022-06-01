@@ -69,15 +69,16 @@ double mediane(const double tab[], size_t taille) {
 }
 
 double ecartType(const double tab[], size_t n) {
+   // Ecart-type nul s'il n'y a qu'un seul véhicule ou si le tableau est vide
    if (n == 1 || n <= 0) {
-      return NAN; // Ecart-type nul dans le cas où il n'y a qu'un seul véhicule ou si le tableau est vide
+      return NAN;
    }
 
    double sommeCarres = 0, ecartType;
    for (size_t i = 0; i < n; ++i) {
       sommeCarres += pow(tab[i] - moyenne(tab, n), 2);
    }
-   ecartType = sqrt(sommeCarres / (double) (n - 1));
+   ecartType = sqrt(sommeCarres / (double) (n)); //n-1
    return ecartType;
 }
 
