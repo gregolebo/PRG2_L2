@@ -87,7 +87,7 @@ void afficherVehicule(const Vehicule* vehicule) {
 void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere type) {
    if (!parking) return;
 
-   Vehicule *tabTrie = triTypeVehicule(parking, tailleParking, type);
+   Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
 
    size_t cpt = compteurType(parking, tailleParking, type);
 
