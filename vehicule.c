@@ -90,5 +90,6 @@ Critere quelType(const Vehicule* v) {
             case HAUT_GAMME:
                return EST_HAUT_GAMME;
          }
+
    }
 }
