@@ -28,8 +28,7 @@ Vehicule camionnette(Plaque plaque, Marque marque, double volTransport) {
       .categorieVehicule = {.camionnette = {.volumeTransport = volTransport}}};
 }
 
-Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids,
-                         uint16_t cylindree, uint16_t rejetCo2) {
+Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids, uint16_t cylindree, uint16_t rejetCo2) {
    assert(plaque != NULL);
    assert(marque != NULL);
    assert(poids > 0);
@@ -46,8 +45,7 @@ Vehicule voitureStandard(Plaque plaque, Marque marque, uint16_t poids,
 
 }
 
-Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids,
-                          uint16_t puissance) {
+Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids, uint16_t puissance) {
    assert(plaque != NULL);
    assert(marque != NULL);
    assert(poids > 0);
@@ -63,13 +61,12 @@ Vehicule voitureHautGamme(Plaque plaque, Marque marque, uint16_t poids,
 
 }
 
-Vehicule *
-triTypeVehicule(const Vehicule *parking, size_t tailleParking, Critere type) {
+Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere type) {
 
    // Le compteur correspond à la taille du tableau du type choisi
    size_t cpt = compteurType(parking, tailleParking, type);
 
-   Vehicule *tabType = (Vehicule *) calloc(cpt, sizeof(Vehicule));
+   Vehicule* tabType = (Vehicule*) calloc(cpt, sizeof(Vehicule));
    size_t index = 0;
 
    for (size_t i = 0; i < tailleParking; ++i) {
@@ -81,7 +78,7 @@ triTypeVehicule(const Vehicule *parking, size_t tailleParking, Critere type) {
    return tabType;
 }
 
-Critere quelType(const Vehicule *v) {
+Critere quelType(const Vehicule* v) {
    assert(v != NULL);
    switch (v->typeVehicule) {
       case CAMIONETTE:
