@@ -21,7 +21,8 @@ typedef const char* Plaque;
 
 typedef enum {CAMIONETTE, VOITURE} TypeVehicule;
 typedef enum {STANDARD, HAUT_GAMME} TypeVoiture;
-typedef enum {EST_CAMIONETTE, EST_STANDARD, EST_HAUT_GAMME} Critere;
+typedef enum {EST_CAMIONETTE, EST_STANDARD, EST_HAUT_GAMME,
+              TYPE_INDEFINI} Critere;
 
 static const char* const TYPE_VEHICULE_STR[] = {"Camionnette", "Voiture"};
 static const char* const TYPE_VOITURE_STR[] = {"Standard", "Haut-de-gamme"};

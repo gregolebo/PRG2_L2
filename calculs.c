@@ -84,6 +84,7 @@ double ecartType(const double tab[], size_t n) {
 
 size_t compteurType(const Vehicule* parking, size_t tailleParking, Critere type) {
    assert(parking != NULL);
+   assert(type != TYPE_INDEFINI);
    size_t cpt = 0;
 
    for (size_t i = 0; i < tailleParking; ++i) {
