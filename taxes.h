@@ -40,8 +40,8 @@ static const uint16_t SEUIL_REJET_CO2 = 130; // [g/km]
 static const uint16_t SEUIL_PUISSANCE = 250; // [CV]
 
 // Fonctions de calcul de taxes
-CHF taxeAnnuelle(const Vehicule *vehicule);
+CHF taxeAnnuelle(const Vehicule* vehicule);
 
-double *calculTaxe(const Vehicule *tabTrie, size_t taille);
+double* calculTaxe(const Vehicule* tabTrie, size_t taille);
 
 #endif //PRG2_L2_TAXES_H

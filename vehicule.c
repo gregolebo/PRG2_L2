@@ -89,8 +89,10 @@ Critere quelType(const Vehicule* v) {
                return EST_STANDARD;
             case HAUT_GAMME:
                return EST_HAUT_GAMME;
-         }
-            default :
+            default:
                return TYPE_INDEFINI;
+         }
+      default:
+         return TYPE_INDEFINI;
    }
 }
