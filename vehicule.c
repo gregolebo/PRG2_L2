@@ -67,11 +67,13 @@ Vehicule* triTypeVehicule(const Vehicule* parking, size_t tailleParking, Critere
    size_t cpt = compteurType(parking, tailleParking, type);
 
    Vehicule* tabType = (Vehicule*) calloc(cpt, sizeof(Vehicule));
-   size_t index = 0;
 
-   for (size_t i = 0; i < tailleParking; ++i) {
-      if (quelType(&parking[i]) == type) {
-         tabType[index++] = parking[i];
+   if (tabType) {
+      size_t index = 0;
+      for (size_t i = 0; i < tailleParking; ++i) {
+         if (quelType(&parking[i]) == type) {
+            tabType[index++] = parking[i];
+         }
       }
    }
 

@@ -66,9 +66,10 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
 double* calculTaxe(const Vehicule* tabTrie, size_t taille) {
    double* tabTaxe = (double*) calloc(taille, sizeof(double));
 
-   for (size_t i = 0; i < taille; ++i) {
-      tabTaxe[i] = taxeAnnuelle(&tabTrie[i]);
+   if (tabTaxe) {
+      for (size_t i = 0; i < taille; ++i) {
+         tabTaxe[i] = taxeAnnuelle(&tabTrie[i]);
+      }
    }
-
    return tabTaxe;
 }
