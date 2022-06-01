@@ -82,7 +82,7 @@ double ecartType(const double tab[], size_t n) {
    for (size_t i = 0; i < n; ++i) {
       sommeCarres += pow(tab[i] - moyenne(tab, n), 2);
    }
-   ecartType = sqrt(sommeCarres / (double) (n)); //n-1
+   ecartType = sqrt(sommeCarres / (double) (n));
    return ecartType;
 }
 

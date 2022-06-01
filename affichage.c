@@ -85,9 +85,9 @@ void afficherVehicule(const Vehicule* vehicule) {
 }
 
 void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere type) {
-  if (!parking) return;
+   if (!parking) return;
 
-   Vehicule* tabTrie = triTypeVehicule(parking, tailleParking, type);
+   Vehicule *tabTrie = triTypeVehicule(parking, tailleParking, type);
 
    size_t cpt = compteurType(parking, tailleParking, type);
 
@@ -100,7 +100,7 @@ void afficherStatType(const Vehicule* parking, size_t tailleParking, Critere typ
 
    printf("+ ------------- TAXES / " "%s" "%s",
           CRITERE_STR[type], " ------------- +\n");
-   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Somme",   somme(tabTaxe, cpt));
+   printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Somme", somme(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Moyenne", moyenne(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Mediane", mediane(tabTaxe, cpt));
    printf(FORMAT_AFFICHAGE(PRECISION_AFFICHAGE), "Ecart-type",
