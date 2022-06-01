@@ -65,6 +65,10 @@ double mediane(const double tab[], size_t taille) {
    } else {
       mediane = (tab[(taille - 1) / 2] + tab[taille / 2]) / 2;
    }
+
+   free(ptr);
+   ptr = NULL;
+
    return mediane;
 }
 

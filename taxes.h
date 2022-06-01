@@ -41,7 +41,6 @@ static const uint16_t SEUIL_PUISSANCE = 250; // [CV]
 
 // Fonctions de calcul de taxes
 CHF taxeAnnuelle(const Vehicule* vehicule);
-
 double* calculTaxe(const Vehicule* tabTrie, size_t taille);
 
 #endif //PRG2_L2_TAXES_H
