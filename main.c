@@ -40,9 +40,5 @@ int main(void) {
    afficherStatType(parking, TAILLE_PARKING, EST_STANDARD);
    afficherStatType(parking, TAILLE_PARKING, EST_HAUT_GAMME);
 
-   // nouvelle constante pour taxes
-   // écart-type
-   // séparer ce qui se trouve dans calculs.h en 2 modules
-
    return EXIT_SUCCESS;
 }
