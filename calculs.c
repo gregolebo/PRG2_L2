@@ -56,7 +56,9 @@ double mediane(const double tab[], size_t taille) {
    }
 
    double* ptr = (double*) calloc(taille, sizeof(double));
-   memcpy(ptr, tab, taille);
+   if (ptr) {
+      memcpy(ptr, tab, taille);
+   }
 
    double mediane;
    qsort(ptr, taille, sizeof(double), compareDouble);
