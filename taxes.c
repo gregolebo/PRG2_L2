@@ -11,6 +11,7 @@
 */
 
 #include <stdlib.h>
+#include <math.h>
 #include "taxes.h"
 
 CHF taxeAnnuelle(const Vehicule* vehicule) {
@@ -56,7 +57,14 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
                                                 vehicule->categorieVehicule.voiture.poids;
                }
                break;
+
+            default:
+               return NAN;
          }
+         break;
+
+      default:
+         return NAN;
    }
 
    return taxe;
