@@ -20,18 +20,18 @@
 typedef double CHF;
 
 // Taxes de base
-static const CHF TAXE_BASE_CAMIONNETTE = 700;
-static const CHF TAXE_BASE_VOITURE = 400;
+static const CHF TAXE_BASE_CAMIONNETTE = 700.;
+static const CHF TAXE_BASE_VOITURE = 400.;
 
 // Taxes spécifiques
-static const CHF COEFF_TAXE_VOL_TRANSP_CAM = 10;
+static const CHF COEFF_TAXE_VOL_TRANSP_CAM = 10.;
 // Cylindrée < 1400 [cm3] et rejet CO2 < 130 [g/km]
-static const CHF TAXE_CRITERES1_STAND = 0;
+static const CHF TAXE_CRITERES1_STAND = 0.;
 // Cylindrée < 1400 [cm3] et rejet CO2 >= 130 [g/km]
-static const CHF TAXE_CRITERES2_STAND = 50;
+static const CHF TAXE_CRITERES2_STAND = 50.;
 static const CHF COEFF_TAXE_CYLINDREE_STAND = .05;
-static const CHF TAXE_PUISSANCE_HDG = 200;
-static const CHF TAXE_POIDS_BASE_HDG = 300;
+static const CHF TAXE_PUISSANCE_HDG = 200.;
+static const CHF TAXE_POIDS_BASE_HDG = 300.;
 static const CHF COEFF_TAXE_POIDS_HDG = 0.02;
 
 // Seuils de taxation

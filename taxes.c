@@ -27,49 +27,49 @@ CHF taxeAnnuelle(const Vehicule* vehicule) {
          taxe += TAXE_BASE_VOITURE;
 
          // Voiture Standard
-         if (vehicule->categorieVehicule.voiture.typeVoiture == STANDARD) {
-            if (
-               vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree <
-               SEUIL_CYLINDREE) {
+         switch (vehicule->categorieVehicule.voiture.typeVoiture) {
+            case STANDARD:
                if (
-                  vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.rejetCo2 >=
-                  SEUIL_REJET_CO2)
-                  taxe += TAXE_CRITERES2_STAND;
-               else {
-                  taxe += TAXE_CRITERES1_STAND;
+                  vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree <
+                  SEUIL_CYLINDREE) {
+                  if (
+                     vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.rejetCo2 <
+                     SEUIL_REJET_CO2) {
+                     taxe += TAXE_CRITERES1_STAND;
+                  } else {
+                     taxe += TAXE_CRITERES2_STAND;
+                  }
+
+               } else {
+                  taxe += (COEFF_TAXE_CYLINDREE_STAND *
+                           vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
                }
+               break;
 
-            } else
-               taxe += (COEFF_TAXE_CYLINDREE_STAND *
-                        vehicule->categorieVehicule.voiture.specVoiture.voitureStandard.cylindree);
-
-         } else {
-            // Voiture haut de gamme
-            if (
-               vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance <=
-               SEUIL_PUISSANCE)
-               taxe += TAXE_PUISSANCE_HDG;
-            else
-               taxe += TAXE_POIDS_BASE_HDG + COEFF_TAXE_POIDS_HDG *
-                                             vehicule->categorieVehicule.voiture.poids;
+            case HAUT_GAMME:
+               if (
+                  vehicule->categorieVehicule.voiture.specVoiture.voitureHautGamme.puissance <=
+                  SEUIL_PUISSANCE)
+                  taxe += TAXE_PUISSANCE_HDG;
+               else {
+                  taxe += TAXE_POIDS_BASE_HDG + COEFF_TAXE_POIDS_HDG *
+                                                vehicule->categorieVehicule.voiture.poids;
+               }
+               break;
          }
-         break;
-
-      default:
-         break;
-
    }
+
    return taxe;
 }
 
-
-double* calculTaxe(const Vehicule* tabTrie, size_t taille) {
-   double* tabTaxe = (double*) calloc(taille, sizeof(double));
+double *calculTaxe(const Vehicule* tabTrie, size_t taille) {
+   double *tabTaxe = (double *) calloc(taille, sizeof(double));
 
    if (tabTaxe) {
       for (size_t i = 0; i < taille; ++i) {
          tabTaxe[i] = taxeAnnuelle(&tabTrie[i]);
       }
    }
+
    return tabTaxe;
 }
